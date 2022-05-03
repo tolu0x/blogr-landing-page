@@ -1,0 +1,340 @@
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 70%;
+}
+
+header {
+  display: flex;
+  position: relative;
+  min-height: 90vh;
+  min-width: 414px;
+  background-color: rgb(206, 64, 71);
+  background-image: url(../assets/img/bg-pattern-intro-mobile.svg);
+  background-position: -50vh -30vh;
+  background-size: 195vh;
+  background-repeat: repeat;
+  border-bottom-left-radius: 100px;
+}
+header .gradient {
+  position: absolute;
+  width: 100%;
+  min-height: 90vh;
+  background-color: rgb(254, 76, 88);
+  background: rgb(254, 76, 97);
+  background: linear-gradient(180deg, rgb(254, 76, 97) 0%, rgba(254, 76, 88, 0.89) 35%, rgba(254, 76, 88, 0.73) 100%);
+  border-bottom-left-radius: 100px;
+}
+header nav {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  max-width: 100%;
+  min-width: 100%;
+  margin-top: 2em;
+  z-index: 3;
+}
+header nav .logo {
+  width: 50%;
+  padding: 2.5em;
+}
+header nav img {
+  width: 7em;
+}
+header nav .nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+}
+header nav > ul {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  justify-content: flex;
+  position: fixed;
+  top: 15%;
+  width: 80%;
+  min-height: 75vh;
+  padding: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 0 1.4rem rgba(0, 0, 0, 0.364);
+}
+header nav > ul .links {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+header nav > ul .links li {
+  width: 100%;
+}
+header nav > ul .links li a {
+  font-family: "Overpass", sans-serif;
+  font-size: 1rem;
+  color: #000;
+  text-align: center;
+  display: block;
+  padding: 1em;
+  font-weight: bold;
+  text-decoration: none;
+}
+header nav > ul .links li a img {
+  padding-left: 0.5em;
+  transition: 0.5s ease;
+  width: 1em;
+}
+header nav > ul .links li ul {
+  display: none;
+  width: 17rem;
+  border-radius: 13px;
+  padding: 0;
+  background-color: #a5a5a8;
+}
+header nav > ul .links li ul li {
+  width: auto;
+}
+header nav > ul .session {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+header nav > ul .session a {
+  font-family: "Overpass", sans-serif;
+  font-size: 1rem;
+  color: #000;
+  text-align: center;
+  display: block;
+  width: 30%;
+  padding: 1em;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+header nav > ul .session .login {
+  background-color: transparent;
+}
+header nav > ul .session .sign-up {
+  color: #fff;
+  background-color: #ff4958;
+  width: 5rem;
+}
+header .post-header {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 90vh;
+  max-height: 90vh;
+  position: absolute;
+}
+header .post-header h1 {
+  font-family: "Overpass", sans-serif;
+  font-size: 1.8rem;
+  color: #fff;
+  text-align: center;
+  width: 80%;
+}
+header .post-header p {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  width: 80%;
+  line-height: 1.5;
+}
+header .post-header .cta-btn {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1em;
+  width: 80%;
+}
+header .post-header .cta-btn a {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 0.8rem;
+  color: #000;
+  text-align: center;
+  padding: 1em;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  font-weight: bold;
+  width: 7em;
+}
+header .post-header .cta-btn .filled {
+  background-color: #fff;
+  color: rgb(254, 76, 88);
+}
+header .post-header .cta-btn .empty {
+  border: 1px solid #fff;
+}
+
+main {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+}
+main .content-wrapper {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6em;
+  min-width: 400px;
+  margin-bottom: 5em;
+  position: relative;
+}
+main .content-wrapper h2 {
+  font-family: "Overpass", sans-serif;
+  font-size: 1.7rem;
+  color: hsl(208deg, 49%, 24%);
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  font-weight: 900;
+}
+main .content-wrapper .picture-img {
+  display: block;
+  margin-block: 4em;
+  z-index: 2;
+}
+main .content-wrapper .picture-img img {
+  width: 100%;
+}
+main .content-wrapper .content-text {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.1rem;
+  color: hsl(207deg, 13%, 34%);
+  text-align: center;
+  width: min(80%, 400px);
+  margin: auto;
+}
+main .content-wrapper .content-text h2 {
+  margin-top: 2em;
+}
+main .content-wrapper .content-text p {
+  line-height: 2;
+}
+main .content-wrapper .picture-img.img-text {
+  position: absolute;
+  top: -20vh;
+  margin-bottom: 5vh;
+}
+main .content-wrapper .picture-img.img-text img {
+  width: 380px;
+}
+main .content-wrapper .content-text.bg-pattern {
+  min-height: 130vh;
+  width: 100%;
+  background-color: hsl(237deg, 17%, 21%);
+  background-color: linear-gradient(90deg, hsl(237deg, 17%, 21%) 0%, hsl(237deg, 23%, 32%) 100%);
+  background-image: url("../assets/img/bg-pattern-circles.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -25vh -42vh;
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 100px;
+}
+main .content-wrapper .content-text.bg-pattern h2, main .content-wrapper .content-text.bg-pattern p {
+  width: 80%;
+  margin: auto;
+}
+main .content-wrapper .content-text.bg-pattern h2 {
+  font-family: "Overpass", sans-serif;
+  font-size: 2.1rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 40vh;
+  margin-bottom: 1em;
+}
+main .content-wrapper .content-text.bg-pattern p {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  color: hsl(0deg, 0%, 80%);
+  text-align: center;
+}
+main .content-wrapper.wrapper-filled {
+  margin-top: 16em;
+}
+
+footer {
+  min-width: 410px;
+  background-color: hsl(240deg, 10%, 16%);
+  padding: 1em;
+  border-top-right-radius: 140px;
+}
+footer h2 {
+  font-family: "Overpass", sans-serif;
+  font-size: 2.8rem;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
+footer .section {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+}
+footer .section h3 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  padding: 1em;
+}
+footer .section a {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 0.7rem;
+  color: hsl(0deg, 0%, 80%);
+  text-align: center;
+  text-decoration: none;
+}
+footer .attribution {
+  padding-top: 1rem;
+  font-family: "Overpass", sans-serif;
+  font-size: 0.7rem;
+  color: #fff;
+  text-align: center;
+}
+footer .attribution h2 {
+  font-family: "Overpass", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  padding: 1.5em;
+}
+footer .attribution a {
+  line-height: 2;
+  color: hsl(174deg, 52%, 38%);
+}/*# sourceMappingURL=style.css.map */

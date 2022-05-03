@@ -1,0 +1,303 @@
+@mixin flex-box($orientation) {
+    max-width: 100%;
+    display: flex;
+    flex-direction: $orientation;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin font_style($family, $size, $color) {
+    @if $family == null or $size == null or $color == null{
+        font-family: "Arial", cursive;
+        font-size: 11px;
+        color: red;
+    }
+    font-family: $family, sans-serif;
+    font-size: $size;
+    color: $color;
+    text-align: center
+}
+
+@mixin btn_basic {
+    padding: 1em;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 30px;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 70%;
+}
+
+header{
+    display: flex;
+    position: relative;
+    min-height: 90vh;
+    min-width: 414px;
+    background-color: rgb(206, 64, 71);
+    background-image: url(../assets/img/bg-pattern-intro-mobile.svg);
+    background-position: -50vh -30vh;
+    background-size: 195vh;
+    background-repeat: repeat;
+    border-bottom-left-radius: 100px;
+    .gradient{
+        position: absolute;
+        width: 100%;
+        min-height: 90vh;
+        background-color: rgb(254, 76, 88);
+        background: rgb(254, 76, 97);
+        // background:-webkit-lineear-gradient{
+        //     linear-gradient(180deg, 
+        //   rgba(254, 76, 97, 1) 0%,
+        //   rgba(254, 76, 88, 0.89) 35%,
+        //   rgba(254, 76, 88, 0.73) 100%);}
+        // }
+        background: linear-gradient(180deg, 
+          rgba(254, 76, 97, 1) 0%,
+          rgba(254, 76, 88, 0.89) 35%,
+          rgba(254, 76, 88, 0.73) 100%
+          );
+        border-bottom-left-radius: 100px;
+    }
+    nav{
+        @include flex-box(row);
+        position: absolute;
+        max-width: 100%;
+        min-width: 100%;
+        margin-top: 2em;
+        z-index: 3;
+        .logo{
+            width: 50%;
+            padding: 2.5em;
+        }
+        img{
+            width: 7em;
+        }
+        .nav-toggle{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 10%;
+        } 
+        > ul{
+            @include flex-box(column);
+            display: none;
+            justify-content: flex;
+            position: fixed;
+            top: 15%;
+            width: 80%;
+            min-height: 75vh;
+            padding: 1.5rem;
+            background-color: #fff;
+            box-shadow: 0 0 1.4rem rgba(0,0,0,0.364);
+            .links{
+                @include flex-box(column);
+                li {
+                    width: 100%;
+                    a {
+                        @include font_style("Overpass", 1rem, #000);
+                        display: block;
+                        padding: 1em;
+                        font-weight: bold;
+                        text-decoration: none;
+                        img {
+                            padding-left: 0.5em;
+                            transition: 0.5s ease;
+                            width: 1em;
+                        }
+                    }
+                    ul {
+                        display: none;
+                        width: 17rem;
+                        border-radius: 13px;
+                        padding: 0;
+                        background-color: #a5a5a8;
+                        li{
+                            width: auto;
+                        }
+                    }
+                }
+            }
+            .session{
+                @include flex-box(column);
+                gap: 1em;
+                a{
+                    @include font_style("Overpass", 1rem, #000);
+                    display: block;
+                    width: 50%;
+                    padding: 1em;
+                    border-radius: 10px;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                }
+                .login{
+                    background-color: transparent;
+                }
+                .sign-up{
+                    color: #fff;
+                    background-color: #ff4958;
+                    width: 5rem;
+                }
+            }
+        } 
+    }
+    .post-header{
+        @include flex-box(column);
+        width: 100%;
+        min-height: 90vh;
+        max-height: 90vh;
+        position: absolute;
+        h1{
+            @include font_style("Overpass", 1.8rem, #fff);
+            width: 80%;
+        }
+        p{
+            @include font_style("Ubuntu", 1rem, #fff);
+            width: 80%;
+            line-height: 1.5;
+        }
+        .cta-btn{
+            @include flex-box(row);
+            gap: 1.5rem;
+            margin-top: 1em;
+            width: 80%;
+            a{
+                @include font_style("Ubuntu", 0.8rem, #000);
+                @include btn_basic();
+                font-weight: bold;
+                width: 7em;
+            }
+            .filled{
+                background-color: #fff;
+                color: rgb(254, 76, 88);
+            }
+            .empty{
+                border: 1px solid #fff;
+            }
+        }
+    }
+}
+
+main{
+    @include flex-box(column);
+    min-width: 30px;
+    .content-wrapper{
+        @include flex-box(column);
+        margin-top: 6em;
+        min-width: 400px;
+        margin-bottom: 5em;
+        position: relative;
+        h2 {
+            @include font_style("Overpass", 1.7rem, hsl(208, 49%, 24%));
+            width: 70%;
+            margin: auto;
+            font-weight: 900;
+        }
+        .picture-img{
+            display: block;
+            margin-block: 4em;
+            z-index: 2;
+            img{
+                width: 100%;
+            }
+        }
+        .content-text{
+            @include font_style("Ubuntu", 1.1rem, hsl(207, 13%, 34%));
+            width: min(80%, 400px);
+            margin: auto;
+            h2{
+                margin-top: 2em;
+            }
+            p{
+                line-height: 2;
+            }
+        }
+        .picture-img.img-text{
+            position: absolute;
+            top: -20vh;
+            margin-bottom: 5vh;
+            img{
+                width: 380px;
+            }
+        }
+        .content-text.bg-pattern{
+            min-height: 130vh;
+            width: 100%;
+            background-color: hsl(237, 17%, 21%);
+            background-color: linear-gradient(90deg,
+            hsl(237, 17%, 21%, 1) 0%, 
+            hsl(237, 23%, 32%, 1) 100% );
+            background-image: url('../assets/img/bg-pattern-circles.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: -25vh -42vh;
+            border-bottom-left-radius: 100px;
+            border-top-right-radius: 100px;
+            h2, p{
+                width: 80%;
+                margin: auto;
+            }
+            h2{
+                @include font_style("Overpass", 2.1rem, #fff);
+                margin-top: 40vh;
+                margin-bottom: 1em;
+            }
+            p{
+                @include font_style("Ubuntu", 1rem, hsl(0, 0%, 80%));
+            }
+        }
+    }
+    .content-wrapper.wrapper-filled{
+        margin-top: 16em;
+    }
+}
+
+footer{
+    min-width: 410px;
+    background-color: hsl(240, 10%, 16%);
+    padding: 1em;
+    border-top-right-radius: 140px;
+    h2{
+        @include font_style("Overpass", 2.8rem, #fff);
+        width: 100%;
+    }
+    .section{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+        h3{
+            @include font_style("Ubuntu", 1rem,  #fff);
+            font-weight: 600;
+            padding: 1em;
+        }
+        a{
+            @include font_style("Ubuntu", 0.7rem, hsl(0, 0%, 80%));
+            text-decoration: none;
+        }
+    }
+    .attribution{
+        padding-top: 1rem;
+        @include font_style("Overpass", 0.7rem, #fff);
+        h2{
+            @include font_style("Overpass", 1rem, #fff);
+            padding: 1.5em;
+        }
+    }
+    .attribution a{
+        line-height: 2;
+        color: hsl(174, 52%, 38%);
+    }
+}
+
