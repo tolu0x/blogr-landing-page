@@ -37,7 +37,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    position: initial;
+    position: relative;
     min-height: auto;
     width: 95%;
     padding: 0;

@@ -1,23 +1,21 @@
-let ul_element = document.querySelector("#sub-connect");
-let nav = document.querySelector("#nav");
-let icon_navbar = document.querySelector("#nav-icon");
-let arrow = document.querySelector('#connect').lastChild;
-let arrow_logo = document.querySelector('.arrow');
+const ul_element = document.querySelector("#sub-connect");
+const nav = document.querySelector("#nav");
+const icon_navbar = document.querySelector("#nav-icon");
+const arrow = document.querySelector('#connect').lastChild;
+const arrow_logo = document.querySelector('.arrow');
 let toggle_connect = false;
 let nav_toggle = false;
+const control = document.querySelector("#nav-toggle");
+const connect = document.querySelector('#connect');
 
-document.querySelector("#nav-toggle").addEventListener("click", () => {
-    nav_toggle = !nav_toggle;
-    if ( nav_toggle){
-        nav.style.display = 'flex';
-        icon_navbar.src = '../assets/icons/icon-close.svg';
-    } else{
-        nav.style.display = 'none';
-        icon_navbar.src = '../assets/icons/icon-hamburger.svg';
-    }
+control.addEventListener("click", () => {
+    control.classList.toggle('toggle');
+    nav.classList.toggle('nav-active')
+
+    nav.style.display = 'block';
 });
 
-document.querySelector('#connect').addEventListener("click", (e) => {
+connect.addEventListener("click", () => {
     toggle_connect = !toggle_connect;
     if (toggle_connect){
         ul_element.style.display = 'block';
