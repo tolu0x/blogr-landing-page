@@ -23,10 +23,12 @@
         background-repeat: no-repeat;
         background-position: 30% 50%;
         nav{
-            margin-top: 5em;
+            margin-top: 0;
+            justify-content: space-between;
             .logo{
                 width: 10%;
-                padding-right: 4em;
+                padding-left: 5em;
+                padding-top: 2em;
                 img{
                     width: 10em;
                   }
@@ -36,58 +38,55 @@
             }
             ul{
                 @include flex-box(row);
-                position: initial;
-                min-height: auto;
-                width: 95%;
-                padding: 0;
+                position: static;
+                width: auto;
+                height: auto;
                 background-color: transparent;
                 box-shadow: none;
+                transform: translateX(0%);
+                padding-right: 2rem;
                 .links{
                     flex-direction: row;
                     align-items: flex-start;
                     justify-content: flex-start;
-                    gap: 0;
+                    gap: 1em;
                     li{
                         width: auto;
+                        padding: 0;
+                        a{
+                            padding-right: 1.2rem;
+                        }
+                        #connect{
+                            position: relative;
+                        }
                         ul{
                             display: none;
                             position: absolute;
-                            width: 13%;
+                            left: 12rem;
+                            padding: 2em;
                             background-color: #fff;
                             box-shadow: 0 0 1em rgb(0, 0, 0, 0.364);
-                            border-radius: 10px;
+                            border-radius: 8px;
+                            li{
+                                padding-bottom: 0.5rem;
+                            }
                             a{
                                 text-align: left;
                                 color: #000;
+                            }
+                            a:hover{
+                                opacity: 0.5;
                             }
                         }
                         a{
                             color: #fff;
                         }
-                        img{
-                            padding-left: 0.5em;
+                        a:hover{
+                            opacity: 0.5;
                         }
-                    }
-                }
-                .session{
-                    flex-direction: row;
-                    width: 50%;
-                    padding-right: 1em;
-                    padding-left: 8em;
-                    a{
-                        width: 30%;
-                    }
-                    .login{
-                        color: #fff;
-                        background-color: transparent;
-                    }
-                    .sign-up{
-                        background-color: #fff;
-                        color: hsl(353, 100%, 62%);
-                    }
-                    .sign-up:hover{
-                        color: #fff;
-                        background-color: hsl(353, 100%, 62%);
+                        img{
+                            padding: 0;
+                        }
                     }
                 }
             }
@@ -191,14 +190,11 @@
             width: 20%;
             a{
                 padding: 1em;
+                font-size: 1rem;
             }
-        }
-        .attribution{
-            width: 20%;
-            position: absolute;
-            bottom: 2em;
-            right: 2em;
-            padding-top: 0;
+            a:hover{
+                opacity: 0.6;
+            }
         }
     }
 }
