@@ -78,6 +78,9 @@ header nav .toggle .line3 {
 header nav .nav-active {
   transform: translateX(0%);
 }
+header nav > ul.open {
+  display: block;
+}
 header nav > ul {
   max-width: 100%;
   display: flex;

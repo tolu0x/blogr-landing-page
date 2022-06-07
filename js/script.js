@@ -12,7 +12,7 @@ control.addEventListener("click", () => {
     control.classList.toggle('toggle');
     nav.classList.toggle('nav-active')
 
-    nav.style.display = 'block';
+    nav.classList.toggle('open');
 });
 
 connect.addEventListener("click", () => {
